@@ -1,8 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-// import PropTypes from 'prop-types';
-import PageTitle from './page-title';
 
 const Meta = () => (
 	<StaticQuery
