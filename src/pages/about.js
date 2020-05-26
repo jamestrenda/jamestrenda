@@ -7,13 +7,12 @@ import Layout from '../components/layout';
 
 class AboutIndex extends React.Component {
 	render() {
-		const siteTitle = get(this, 'props.data.site.siteMetadata.title');
 		const me = get(this.props, 'data.contentfulPerson');
 		const { src } = me.image.fixed;
 		return (
 			<Layout location={this.props.location}>
+				<Helmet title="About" />
 				<div>
-					<Helmet title={siteTitle} />
 					<h1>About</h1>
 					<div className="wrapper">
 						<img src={src} alt={me.name} />

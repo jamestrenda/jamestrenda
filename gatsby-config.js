@@ -26,9 +26,38 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
 	siteMetadata: {
-		title: 'James Trenda',
+		title: '',
+		titleTemplate: '%s • James Trenda',
+		description: `
+			  The description will be shown in SEO results on pages
+			  without their own descriptions.
+			`,
+		siteUrl: 'https://jamestrenda.com',
+		image: 'https://jamestrenda.com/images/jt.jpg',
+		author: {
+			name: 'Your Name',
+			minibio: `
+				This bio is shown at the bottom of each blog post. It supports
+				<strong>custom HTML</strong> if you’re into that sort of thing.
+			  `,
+		},
+		organization: {
+			name: 'James Trenda',
+			url: 'https://jamestrenda.com',
+			logo: 'https://jamestrenda.com/android-chrome-512x512.png',
+		},
+		social: {
+			twitter: '@jamestrenda',
+			instagram: '@jamestrenda',
+			fbAppID: '',
+		},
+		categories: [
+			{
+				slug: 'test',
+				name: 'Test Category',
+			},
+		],
 	},
-	pathPrefix: '/gatsby-contentful-starter',
 	plugins: [
 		'gatsby-transformer-remark',
 		'gatsby-transformer-sharp',

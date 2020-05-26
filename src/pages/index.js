@@ -1,21 +1,21 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
-import Helmet from 'react-helmet';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
 import ArticlePreview from '../components/article-preview';
+import { Helmet } from 'react-helmet';
 
 class RootIndex extends React.Component {
 	render() {
-		const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+		// const siteTitle = get(this, 'props.data.site.siteMetadata.title');
 		const posts = get(this, 'props.data.allContentfulBlogPost.edges');
 		const [author] = get(this, 'props.data.allContentfulPerson.edges');
 
 		return (
 			<Layout location={this.props.location}>
+				<Helmet title="Home" />
 				<div style={{ background: '#fff' }}>
-					<Helmet title={siteTitle} />
 					<Hero data={author.node} />
 					<div className="wrapper">
 						<h2 className="section-headline">Recent articles</h2>
@@ -39,6 +39,11 @@ export default RootIndex;
 
 export const pageQuery = graphql`
 	query HomeQuery {
+		site {
+			siteMetadata {
+				title
+			}
+		}
 		allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
 			edges {
 				node {
@@ -65,10 +70,6 @@ export const pageQuery = graphql`
 			edges {
 				node {
 					name
-					# shortBio {
-					# 	shortBio
-					# }
-					# title
 					heroImage: image {
 						fluid(
 							maxWidth: 1180
