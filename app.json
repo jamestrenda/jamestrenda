@@ -1,20 +1,15 @@
 {
-  "name": "Contentful Gatsby Starter",
-  "description": "Gatsby starter for a Contentful project.",
-  "keywords": [
-    "contentful",
-    "gatsby",
-    "static",
-    "ssg"
-  ],
-  "repository": "https://github.com/contentful-userland/gatsby-contentful-starter",
-  "success_url": "/",
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-static"
-    }
-  ]
+	"name": "James Trenda",
+	"description": "A blog and other stuff from James Trenda.",
+	"keywords": ["contentful", "gatsby", "static", "ssg"],
+	"repository": "https://github.com/jamestrenda/jamestrenda",
+	"success_url": "/",
+	"buildpacks": [
+		{
+			"url": "heroku/nodejs"
+		},
+		{
+			"url": "https://github.com/heroku/heroku-buildpack-static"
+		}
+	]
 }
